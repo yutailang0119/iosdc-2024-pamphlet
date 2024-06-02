@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		6D1F1FF62C0B923C00B6FBB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F1FF52C0B923C00B6FBB6 /* ContentView.swift */; };
 		6D1F1FF82C0B923D00B6FBB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F1FF72C0B923D00B6FBB6 /* Assets.xcassets */; };
 		6D1F1FFB2C0B923D00B6FBB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F1FFA2C0B923D00B6FBB6 /* Preview Assets.xcassets */; };
+		6D1F200F2C0C985800B6FBB6 /* NetworkLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1F200E2C0C985800B6FBB6 /* NetworkLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1F200F2C0C985800B6FBB6 /* NetworkLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = ExampleApp;
+			packageProductDependencies = (
+				6D1F200E2C0C985800B6FBB6 /* NetworkLibrary */,
+			);
 			productName = ExampleApp;
 			productReference = 6D1F1FF02C0B923C00B6FBB6 /* ExampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 6D1F1FE72C0B923C00B6FBB6;
+			packageReferences = (
+				6D1F200D2C0C985800B6FBB6 /* XCLocalSwiftPackageReference "NetworkPackage" */,
+			);
 			productRefGroup = 6D1F1FF12C0B923C00B6FBB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +350,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		6D1F200D2C0C985800B6FBB6 /* XCLocalSwiftPackageReference "NetworkPackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = NetworkPackage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6D1F200E2C0C985800B6FBB6 /* NetworkLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6D1F1FE82C0B923C00B6FBB6 /* Project object */;
 }
