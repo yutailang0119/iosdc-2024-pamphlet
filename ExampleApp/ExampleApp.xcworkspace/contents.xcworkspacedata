@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:">
+      location = "group:ExampleApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:NetworkPackage">
    </FileRef>
 </Workspace>
