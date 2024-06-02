@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NetworkLibrary
 
 @main
 struct ExampleApp: App {
