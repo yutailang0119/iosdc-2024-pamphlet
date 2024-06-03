@@ -19,6 +19,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "NetworkLibrary"),
+            name: "NetworkLibrary",
+            dependencies: [
+                "BonjourExample",
+            ]),
+        .target(
+            name: "BonjourExample"),
     ]
 )
