@@ -20,12 +20,21 @@ public struct AirPlayList: View {
         .navigationTitle("_airplay._tcp")
         .task {
             for await airplays in browse() {
-                self.airplays = airplays
+                self.airplays = airplays.compactMap {
+                    switch $0.endpoint {
+                    case .service(let name, let type, let domain, _):
+                        return "\(name)\(domain)\(type)"
+                    case .hostPort, .unix, .url, .opaque:
+                        return nil
+                    @unknown default:
+                        return nil
+                    }
+                }
             }
         }
     }
 
-    private func browse() -> AsyncStream<[String]> {
+    private func browse() -> AsyncStream<Set<NWBrowser.Result>> {
         AsyncStream { continuation in
             let browser = NWBrowser(
                 for: .bonjour(
@@ -34,17 +43,21 @@ public struct AirPlayList: View {
                 ),
                 using: .tcp
             )
+            browser.stateUpdateHandler = { state in
+                switch state {
+                case .ready:
+                    continuation.yield(browser.browseResults)
+                case .failed:
+                    browser.cancel()
+                    continuation.finish()
+                case .setup, .cancelled, .waiting:
+                    break
+                @unknown default:
+                    break
+                }
+            }
             browser.browseResultsChangedHandler = { results, _ in
-                let services: [String] = results
-                    .compactMap { result in
-                        switch result.endpoint {
-                        case .service(let name, let type, let domain, _):
-                            return "\(name)\(domain)\(type)"
-                        default:
-                            return nil
-                        }
-                    }
-                continuation.yield(services)
+                continuation.yield(results)
             }
             continuation.onTermination = { _ in
                 browser.cancel()
