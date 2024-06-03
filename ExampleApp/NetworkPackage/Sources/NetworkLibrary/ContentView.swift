@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
+import BonjourExample
 
 public struct ContentView: View {
     public init() {}
 
     public var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                NavigationLink {
+                    AirPlayList()
+                } label: {
+                    Text("_airplay._tcp")
+                }
+            }
         }
-        .padding()
     }
 }
 

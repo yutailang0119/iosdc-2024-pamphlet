@@ -1,6 +1,6 @@
 //
 //  AirPlayList.swift
-//  NetworkLibrary
+//  BonjourExample
 //
 //  Created by Yutaro Muta on 2024/06/03.
 //
@@ -8,10 +8,12 @@
 import SwiftUI
 import Network
 
-struct AirPlayList: View {
+public struct AirPlayList: View {
     @State private var airplays: [String] = []
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         List(airplays, id: \.self) {
             Text($0)
         }
