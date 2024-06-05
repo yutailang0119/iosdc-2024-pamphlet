@@ -12,7 +12,7 @@ import UIKit
 public struct EntryView: View {
     @State private var results: [NWBrowser.Result] = []
     @State private var hostTask: Task<Void, any Error>?
-    @State private var sheet: Sheet? = nil
+    @State private var cover: FullScreenCover? = nil
 
     public init() {}
 
@@ -21,7 +21,7 @@ public struct EntryView: View {
             switch result.endpoint {
             case .service(let name, let type, let domain, _) where uuid != name:
                 Button {
-                    sheet = .challenger(result)
+                    cover = .challenger(result)
                 } label: {
                     Text("\(name)\(domain)\(type)")
                 }
@@ -37,7 +37,7 @@ public struct EntryView: View {
                         guard let connection = try await host().first(where: { _ in true }) else {
                             return
                         }
-                        sheet = .host(connection)
+                        cover = .host(connection)
                         hostTask = nil
                     }
                 } label: {
@@ -59,8 +59,8 @@ public struct EntryView: View {
         .onDisappear {
             hostTask?.cancel()
         }
-        .sheet(item: $sheet) { sheet in
-            SheetView(sheet: sheet)
+        .fullScreenCover(item: $cover) { cover in
+            FullScreen(cover: cover)
         }
     }
 }
@@ -143,7 +143,7 @@ extension EntryView {
 }
 
 extension EntryView {
-    enum Sheet: Identifiable {
+    enum FullScreenCover: Identifiable {
         case host(NWConnection)
         case challenger(NWBrowser.Result)
 
@@ -157,15 +157,15 @@ extension EntryView {
         }
     }
 
-    struct SheetView: View {
+    struct FullScreen: View {
         @Environment(\.dismiss) private var dismiss
 
-        let sheet: Sheet
+        var cover: FullScreenCover
 
         var body: some View {
             NavigationStack {
                 Group {
-                    switch sheet {
+                    switch cover {
                     case .host(let connection):
                         Text(connection.endpoint.debugDescription)
                     case .challenger(let result):
