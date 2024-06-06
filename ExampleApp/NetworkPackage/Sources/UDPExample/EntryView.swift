@@ -167,9 +167,9 @@ extension EntryView {
                 Group {
                     switch cover {
                     case .host(let connection):
-                        Text(connection.endpoint.debugDescription)
+                        ConnectionView(connection: connection, player: .host)
                     case .challenger(let result):
-                        Text(result.endpoint.debugDescription)
+                        ConnectionView(endpoint: result.endpoint, player: .challenger)
                     }
                 }
                 .toolbar {
