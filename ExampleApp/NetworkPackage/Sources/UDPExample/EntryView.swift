@@ -186,7 +186,6 @@ extension EntryView {
     }
 }
 
-
 #Preview {
     EntryView()
 }
