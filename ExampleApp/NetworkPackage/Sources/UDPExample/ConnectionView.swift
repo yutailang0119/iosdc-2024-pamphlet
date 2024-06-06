@@ -40,7 +40,7 @@ struct ConnectionView: View {
 
         connection.send(
             content: "".data(using: .utf8),
-            completion: NWConnection.SendCompletion.contentProcessed { error in
+            completion: .contentProcessed { error in
                 print(error)
             }
         )
@@ -116,7 +116,7 @@ struct ConnectionView: View {
                 let data = try encoder.encode(newValue)
                 connection.send(
                     content: data,
-                    completion: NWConnection.SendCompletion.contentProcessed { error in
+                    completion: .contentProcessed { error in
                         print(error)
                     }
                 )
