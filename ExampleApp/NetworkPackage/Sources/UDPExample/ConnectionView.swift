@@ -9,7 +9,7 @@ import SwiftUI
 import Network
 
 struct ConnectionView: View {
-    enum Player {
+    enum Role {
         case host
         case client
 
@@ -24,18 +24,18 @@ struct ConnectionView: View {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     private let connection: NWConnection
-    private let player: Player
+    private let role: Role
     @State private var data: ConnectionData
 
-    init(connection: NWConnection, player: Player) {
+    init(connection: NWConnection, role: Role) {
         self.connection = connection
-        self.player = player
+        self.role = role
         self.data = ConnectionData()
     }
 
-    init(endpoint: NWEndpoint, player: Player) {
-        self.connection = NWConnection(to: endpoint, using: .udp)
-        self.player = player
+    init(endpoint: NWEndpoint, role: Role) {
+        self.connection = NWConnection(to: endpoint, using: .tcp)
+        self.role = role
         self.data = ConnectionData()
 
         connection.send(
@@ -48,7 +48,7 @@ struct ConnectionView: View {
 
     public var body: some View {
         VStack {
-            switch player {
+            switch role {
             case .host:
                 Text("Host")
                     .foregroundStyle(.blue)
@@ -59,51 +59,51 @@ struct ConnectionView: View {
             Grid {
                 GridRow {
                     Button {
-                        data.top.leading = player.territory
+                        data.top.leading = role.territory
                     } label: {
                         data.top.leading
                     }
                     Button {
-                        data.top.center = player.territory
+                        data.top.center = role.territory
                     } label: {
                         data.top.center
                     }
                     Button {
-                        data.top.trailing = player.territory
+                        data.top.trailing = role.territory
                     } label: {
                         data.top.trailing
                     }
                 }
                 GridRow {
                     Button {
-                        data.center.leading = player.territory
+                        data.center.leading = role.territory
                     } label: {
                         data.center.leading
                     }
                     Button {
-                        data.center.center = player.territory
+                        data.center.center = role.territory
                     } label: {
                         data.center.center
                     }
                     Button {
-                        data.center.trailing = player.territory
+                        data.center.trailing = role.territory
                     } label: {
                         data.center.trailing
                     }
                 }
                 GridRow {
                     Button {
-                        data.bottom.leading = player.territory
+                        data.bottom.leading = role.territory
                     } label: {
                         data.bottom.leading
                     }
                     Button {
-                        data.bottom.center = player.territory
+                        data.bottom.center = role.territory
                     } label: {
                         data.bottom.center
                     }
                     Button {
-                        data.bottom.trailing = player.territory
+                        data.bottom.trailing = role.territory
                     } label: {
                         data.bottom.trailing
                     }
@@ -175,7 +175,7 @@ extension ConnectionView {
             domain: "local.",
             interface: nil
         ),
-        player: .client
+        role: .client
     )
 }
 
