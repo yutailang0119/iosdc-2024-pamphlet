@@ -38,12 +38,17 @@ struct ConnectionView: View {
         self.player = player
         self.data = ConnectionData()
 
-        connection.send(
-            content: "".data(using: .utf8),
-            completion: .contentProcessed { error in
-                print(error)
-            }
-        )
+        do {
+            let data = try encoder.encode(ConnectionData())
+            connection.send(
+                content: data,
+                completion: .contentProcessed { error in
+                    print(error)
+                }
+            )
+        } catch {
+            print(error)
+        }
     }
 
     public var body: some View {
