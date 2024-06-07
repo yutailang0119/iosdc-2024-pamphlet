@@ -147,11 +147,11 @@ extension ConnectionView {
                 connection.receiveMessage { content, contentContext, isComplete, error in
                     if let content {
                         continuation.yield(content)
+                        receiveMessage()
                     } else if let error {
                         print(error)
                         connection.cancel()
                     }
-                    receiveMessage()
                 }
             }
 
