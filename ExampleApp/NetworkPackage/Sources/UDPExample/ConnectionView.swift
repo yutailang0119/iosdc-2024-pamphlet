@@ -38,17 +38,12 @@ struct ConnectionView: View {
         self.player = player
         self.data = ConnectionData()
 
-        do {
-            let data = try encoder.encode(ConnectionData())
-            connection.send(
-                content: data,
-                completion: .contentProcessed { error in
-                    print(error)
-                }
-            )
-        } catch {
-            print(error)
-        }
+        connection.send(
+            content: try? encoder.encode(ConnectionData()),
+            completion: .contentProcessed { error in
+                print(error)
+            }
+        )
     }
 
     public var body: some View {
@@ -117,17 +112,12 @@ struct ConnectionView: View {
         }
         .padding()
         .onChange(of: data) { _, newValue in
-            do {
-                let data = try encoder.encode(newValue)
-                connection.send(
-                    content: data,
-                    completion: .contentProcessed { error in
-                        print(error)
-                    }
-                )
-            } catch {
-                print(error)
-            }
+            connection.send(
+                content: try? encoder.encode(newValue),
+                completion: .contentProcessed { error in
+                    print(error)
+                }
+            )
         }
         .task {
             do {
