@@ -169,7 +169,7 @@ extension EntryView {
                     case .host(let connection):
                         ConnectionView(connection: connection, player: .host)
                     case .challenger(let result):
-                        ConnectionView(endpoint: result.endpoint, player: .challenger)
+                        ConnectionView(endpoint: result.endpoint, player: .client)
                     }
                 }
                 .toolbar {

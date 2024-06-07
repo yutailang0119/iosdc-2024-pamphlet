@@ -12,7 +12,7 @@ struct ConnectionData: Equatable, Codable {
         enum Item: Equatable, Codable {
             case empty
             case host
-            case challenger
+            case client
         }
 
         var leading: Item

@@ -11,12 +11,12 @@ import Network
 struct ConnectionView: View {
     enum Player {
         case host
-        case challenger
+        case client
 
         var territory: ConnectionData.Row.Item {
             switch self {
             case .host: .host
-            case .challenger: .challenger
+            case .client: .client
             }
         }
     }
@@ -52,8 +52,8 @@ struct ConnectionView: View {
             case .host:
                 Text("Host")
                     .foregroundStyle(.blue)
-            case .challenger:
-                Text("Challenger")
+            case .client:
+                Text("Client")
                     .foregroundStyle(.red)
             }
             Grid {
@@ -175,7 +175,7 @@ extension ConnectionView {
             domain: "local.",
             interface: nil
         ),
-        player: .challenger
+        player: .client
     )
 }
 
@@ -188,7 +188,7 @@ extension ConnectionData.Row.Item: View {
                     .border(.gray)
             case .host:
                 Color.blue
-            case .challenger:
+            case .client:
                 Color.red
             }
         }
