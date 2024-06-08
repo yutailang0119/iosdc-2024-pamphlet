@@ -7,6 +7,7 @@
 
 import SwiftUI
 import BonjourExample
+import UDPExample
 
 public struct ContentView: View {
     public init() {}
@@ -18,6 +19,11 @@ public struct ContentView: View {
                     AirPlayList()
                 } label: {
                     Text("_airplay._tcp")
+                }
+                NavigationLink {
+                    UDPExample.EntryView()
+                } label: {
+                    Text("UDP example")
                 }
             }
         }
