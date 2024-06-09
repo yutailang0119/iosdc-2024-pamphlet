@@ -16,14 +16,14 @@ public struct ContentView: View {
         NavigationStack {
             List {
                 NavigationLink {
-                    AirPlayList()
+                    BonjourExample.AirPlayList()
                 } label: {
-                    Text("_airplay._tcp")
+                    Text("Bonjour Example")
                 }
                 NavigationLink {
                     UDPExample.EntryView()
                 } label: {
-                    Text("UDP example")
+                    Text("UDP Example")
                 }
             }
         }
