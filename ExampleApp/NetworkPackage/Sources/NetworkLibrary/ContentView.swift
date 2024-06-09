@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Bonjour
-import UDPExample
+import UDP
 
 public struct ContentView: View {
     public init() {}
@@ -21,9 +21,9 @@ public struct ContentView: View {
                     Text("Bonjour example")
                 }
                 NavigationLink {
-                    UDPExample.EntryView()
+                    UDP.EntryView()
                 } label: {
-                    Text("UDP Example")
+                    Text("UDP example")
                 }
             }
         }

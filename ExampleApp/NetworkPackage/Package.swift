@@ -22,11 +22,11 @@ let package = Package(
             name: "NetworkLibrary",
             dependencies: [
                 "Bonjour",
-                "UDPExample",
+                "UDP",
             ]),
         .target(
             name: "Bonjour"),
         .target(
-            name: "UDPExample"),
+            name: "UDP"),
     ]
 )

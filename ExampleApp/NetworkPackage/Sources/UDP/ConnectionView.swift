@@ -1,6 +1,6 @@
 //
 //  ConnectionView.swift
-//  UDPExample
+//  UDP
 //
 //  Created by Yutaro Muta on 2024/06/06.
 //
