@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import BonjourExample
+import Bonjour
 import UDPExample
 
 public struct ContentView: View {
@@ -16,9 +16,9 @@ public struct ContentView: View {
         NavigationStack {
             List {
                 NavigationLink {
-                    BonjourExample.AirPlayList()
+                    Bonjour.AirPlayList()
                 } label: {
-                    Text("Bonjour Example")
+                    Text("Bonjour example")
                 }
                 NavigationLink {
                     UDPExample.EntryView()

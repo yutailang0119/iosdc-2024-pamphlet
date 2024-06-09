@@ -1,6 +1,6 @@
 //
 //  AirPlayList.swift
-//  BonjourExample
+//  Bonjour
 //
 //  Created by Yutaro Muta on 2024/06/03.
 //
