@@ -1,0 +1,26 @@
+name: textlint
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/textlint.yml
+      - pamphlet/prh.yml
+      - 'pamphlet/**/*.md'
+
+jobs:
+  textlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+        working-directory: ./pamphlet
+      - name: run textlint
+        id: run-textlint
+        run: |
+          echo "TEXTLINT_OUTPUT=$(./node_modules/.bin/textlint './**/*.md' -f json)" >> $GITHUB_OUTPUT
+        working-directory: ./pamphlet
+      - uses: yutailang0119/action-textlint@v4
+        with:
+          textlint-output: ${{ steps.run-textlint.outputs.TEXTLINT_OUTPUT }}
+          ignore-warnings: false
+        continue-on-error: false

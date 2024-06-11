@@ -1,0 +1,22 @@
+version: 1
+imports:
+  - path: node_modules/prh/prh-rules/media/WEB+DB_PRESS.yml
+    ignoreRules:
+      - expected: アプリケーション
+      - expected: ウィンドウ
+      - expected: ラッパ
+      - expected: ときどき
+      - expected: デプロイ
+rules:
+  - expected: アプリ
+    patterns:
+      - アプリケーション
+  - expected: ウインドウ
+    patterns:
+      - ウィンドウ
+  - expected: ときどき$1
+    pattern: /時々([^刻])/
+  - expected: configuration
+    pattern: configration
+  - expected: Configuration
+    pattern: Configration

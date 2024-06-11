@@ -1,0 +1,24 @@
+{
+  "name": "iosdc-2024-pamphlet",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "textlint './**/*.md'",
+    "fix": "textlint './**/*.md' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yutailang0119/iosdc-2024-pamphlet.git"
+  },
+  "author": "yutailang0119",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yutailang0119/iosdc-2024-pamphlet/issues"
+  },
+  "homepage": "https://github.com/yutailang0119/iosdc-2024-pamphlet#readme",
+  "description": "",
+  "devDependencies": {
+    "textlint": "^14.0.4",
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
+    "textlint-rule-prh": "^6.0.0"
+  }
+}

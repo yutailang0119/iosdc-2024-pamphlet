@@ -1,0 +1,12 @@
+{
+  "plugins": {},
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": true,
+    "prh": {
+      "rulePaths": [
+        "prh.yml"
+      ]
+    }
+  }
+}
