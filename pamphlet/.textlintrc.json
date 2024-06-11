@@ -1,0 +1,8 @@
+{
+  "plugins": {},
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": true,
+    "prh": true
+  }
+}
