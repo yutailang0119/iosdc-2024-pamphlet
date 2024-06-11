@@ -3,6 +3,10 @@
   "filters": {},
   "rules": {
     "preset-ja-technical-writing": true,
-    "prh": true
+    "prh": {
+      "rulePaths": [
+        "prh.yml"
+      ]
+    }
   }
 }
