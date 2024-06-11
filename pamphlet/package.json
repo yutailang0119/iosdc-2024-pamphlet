@@ -17,6 +17,7 @@
   "description": "",
   "devDependencies": {
     "textlint": "^14.0.4",
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
     "textlint-rule-prh": "^6.0.0"
   }
 }
