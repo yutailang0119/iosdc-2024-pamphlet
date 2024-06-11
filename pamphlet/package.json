@@ -16,6 +16,7 @@
   "homepage": "https://github.com/yutailang0119/iosdc-2024-pamphlet#readme",
   "description": "",
   "devDependencies": {
-    "textlint": "^14.0.4"
+    "textlint": "^14.0.4",
+    "textlint-rule-prh": "^6.0.0"
   }
 }
