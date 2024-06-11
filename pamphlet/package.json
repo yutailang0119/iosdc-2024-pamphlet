@@ -14,5 +14,8 @@
     "url": "https://github.com/yutailang0119/iosdc-2024-pamphlet/issues"
   },
   "homepage": "https://github.com/yutailang0119/iosdc-2024-pamphlet#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "textlint": "^14.0.4"
+  }
 }
