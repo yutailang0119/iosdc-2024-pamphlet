@@ -29,7 +29,7 @@ public struct ConnectingView: View {
                 Text("Unknown Endpoint")
             }
         }
-        .navigationTitle("_udpexample._udp")
+        .navigationTitle("_example._udp")
         .toolbar {
             ToolbarItem {
                 Button {
@@ -74,7 +74,7 @@ extension ConnectingView {
         AsyncThrowingStream { continuation in
             do {
                 let listener = try NWListener(using: .udp)
-                listener.service = NWListener.Service(name: uuid, type: "_udpexample._udp")
+                listener.service = NWListener.Service(name: uuid, type: "_example._udp")
                 listener.stateUpdateHandler = { state in
                     switch state {
                     case .failed(let error):
@@ -103,7 +103,7 @@ extension ConnectingView {
         AsyncStream { continuation in
             let browser = NWBrowser(
                 for: .bonjour(
-                    type: "_udpexample._udp",
+                    type: "_example._udp",
                     domain: nil
                 ),
                 using: .udp
