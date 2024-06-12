@@ -25,6 +25,8 @@ let package = Package(
                 "Connection",
             ]),
         .target(
+            name: "PathMonitor"),
+        .target(
             name: "Bonjour"),
         .target(
             name: "Connection"),
