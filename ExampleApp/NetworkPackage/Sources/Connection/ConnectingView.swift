@@ -1,5 +1,5 @@
 //
-//  EntryView.swift
+//  ConnectingView.swift
 //  Connection
 //
 //  Created by Yutaro Muta on 2024/06/03.
@@ -9,7 +9,7 @@ import SwiftUI
 import Network
 import UIKit
 
-public struct EntryView: View {
+public struct ConnectingView: View {
     @State private var results: [NWBrowser.Result] = []
     @State private var hostTask: Task<Void, any Error>?
     @State private var cover: FullScreenCover? = nil
@@ -65,7 +65,7 @@ public struct EntryView: View {
     }
 }
 
-extension EntryView {
+extension ConnectingView {
     private var uuid: String {
         UIDevice().identifierForVendor?.uuidString ?? ""
     }
@@ -142,7 +142,7 @@ extension EntryView {
     }
 }
 
-extension EntryView {
+extension ConnectingView {
     enum FullScreenCover: Identifiable {
         case host(NWConnection)
         case challenger(NWBrowser.Result)
@@ -187,6 +187,6 @@ extension EntryView {
 }
 
 #Preview {
-    EntryView()
+    ConnectingView()
 }
 

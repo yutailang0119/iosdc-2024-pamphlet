@@ -27,7 +27,7 @@ public struct ContentView: View {
                     Text("NWBrowser")
                 }
                 NavigationLink {
-                    Connection.EntryView()
+                    Connection.ConnectingView()
                 } label: {
                     Text("NWListener, NWConnection")
                 }
