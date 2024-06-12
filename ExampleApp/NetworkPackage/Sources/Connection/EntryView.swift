@@ -1,6 +1,6 @@
 //
 //  EntryView.swift
-//  UDP
+//  Connection
 //
 //  Created by Yutaro Muta on 2024/06/03.
 //
