@@ -34,7 +34,7 @@ struct ConnectedView: View {
     }
 
     init(endpoint: NWEndpoint, role: Role) {
-        self.connection = NWConnection(to: endpoint, using: .tcp)
+        self.connection = NWConnection(to: endpoint, using: .udp)
         self.role = role
         self.data = ConnectionData()
 
