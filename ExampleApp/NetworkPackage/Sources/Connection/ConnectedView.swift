@@ -1,5 +1,5 @@
 //
-//  ConnectionView.swift
+//  ConnectedView.swift
 //  Connection
 //
 //  Created by Yutaro Muta on 2024/06/06.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Network
 
-struct ConnectionView: View {
+struct ConnectedView: View {
     enum Role {
         case host
         case client
@@ -135,7 +135,7 @@ struct ConnectionView: View {
     }
 }
 
-extension ConnectionView {
+extension ConnectedView {
     private func receiveMessages() -> AsyncThrowingStream<Data, Error> {
         AsyncThrowingStream { continuation in
             func receiveMessage() {
@@ -168,7 +168,7 @@ extension ConnectionView {
 }
 
 #Preview {
-    ConnectionView(
+    ConnectedView(
         endpoint: NWEndpoint.service(
             name: "ENDPOINT_NAME",
             type: "_example._udp",
