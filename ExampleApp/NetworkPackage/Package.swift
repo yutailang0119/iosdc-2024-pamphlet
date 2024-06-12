@@ -21,6 +21,7 @@ let package = Package(
         .target(
             name: "NetworkLibrary",
             dependencies: [
+                "PathMonitor",
                 "Bonjour",
                 "Connection",
             ]),

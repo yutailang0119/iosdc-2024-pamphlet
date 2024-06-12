@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PathMonitor
 import Bonjour
 import Connection
 
@@ -16,14 +17,19 @@ public struct ContentView: View {
         NavigationStack {
             List {
                 NavigationLink {
+                    PathMonitor.MonitorView()
+                } label: {
+                    Text("NWPathMonitor")
+                }
+                NavigationLink {
                     Bonjour.AirPlayList()
                 } label: {
-                    Text("Bonjour example")
+                    Text("NWBrowser")
                 }
                 NavigationLink {
                     Connection.EntryView()
                 } label: {
-                    Text("UDP example")
+                    Text("NWListener, NWConnection")
                 }
             }
         }
