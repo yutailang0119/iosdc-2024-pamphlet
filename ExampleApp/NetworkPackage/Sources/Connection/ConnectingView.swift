@@ -21,7 +21,7 @@ public struct ConnectingView: View {
             switch result.endpoint {
             case .service(let name, let type, let domain, _) where uuid != name:
                 Button {
-                    cover = .challenger(result)
+                    cover = .client(result)
                 } label: {
                     Text("\(name)\(domain)\(type)")
                 }
@@ -145,13 +145,13 @@ extension ConnectingView {
 extension ConnectingView {
     enum FullScreenCover: Identifiable {
         case host(NWConnection)
-        case challenger(NWBrowser.Result)
+        case client(NWBrowser.Result)
 
         var id: Int {
             switch self {
             case .host(let connection):
                 return connection.endpoint.hashValue
-            case .challenger(let result):
+            case .client(let result):
                 return result.hashValue
             }
         }
@@ -168,7 +168,7 @@ extension ConnectingView {
                     switch cover {
                     case .host(let connection):
                         ConnectedView(connection: connection, role: .host)
-                    case .challenger(let result):
+                    case .client(let result):
                         ConnectedView(endpoint: result.endpoint, role: .client)
                     }
                 }
