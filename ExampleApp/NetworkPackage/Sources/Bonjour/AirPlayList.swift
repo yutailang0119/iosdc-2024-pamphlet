@@ -56,7 +56,7 @@ public struct AirPlayList: View {
                     break
                 }
             }
-            browser.browseResultsChangedHandler = { results, _ in
+            browser.browseResultsChangedHandler = { results, changes in
                 continuation.yield(results)
             }
             continuation.onTermination = { _ in
