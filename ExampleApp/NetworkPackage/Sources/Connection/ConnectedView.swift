@@ -40,6 +40,8 @@ struct ConnectedView: View {
 
         connection.send(
             content: try? encoder.encode(ConnectionData()),
+            contentContext: .defaultMessage,
+            isComplete: true,
             completion: .contentProcessed { error in
                 print(error)
             }
@@ -114,6 +116,8 @@ struct ConnectedView: View {
         .onChange(of: data) { _, newValue in
             connection.send(
                 content: try? encoder.encode(newValue),
+                contentContext: .defaultMessage,
+                isComplete: true,
                 completion: .contentProcessed { error in
                     print(error)
                 }
