@@ -22,7 +22,7 @@ public struct AirPlayList: View {
             for await airplays in browse() {
                 self.airplays = airplays.compactMap {
                     switch $0.endpoint {
-                    case .service(let name, let type, let domain, _):
+                    case .service(let name, let type, let domain, let interface):
                         return "\(name)\(domain)\(type)"
                     case .hostPort, .unix, .url, .opaque:
                         return nil
