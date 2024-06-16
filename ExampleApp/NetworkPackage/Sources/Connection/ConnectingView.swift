@@ -26,7 +26,7 @@ public struct ConnectingView: View {
                     Text("\(name)\(domain)\(type)")
                 }
             default:
-                Text("Unknown Endpoint")
+                EmptyView()
             }
         }
         .navigationTitle("_example._udp")
