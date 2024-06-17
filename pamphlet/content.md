@@ -131,6 +131,10 @@ func browse() -> AsyncStream<Set<NWBrowser.Result>> {
 <!-- TODO: スクリーンショット -->
 
 # Network.frameworkでのUDP送受信
+
+　UDPでのコネクション、データの送受信を解説します。
+例は`_example._udp`で接続し、パネルの状態を相互に送り合うアプリです。
+
 ## Bonjourサービスの告知（アドバタイズ） ── NWListener
 ## Bonjourサービスの検出（ディスカバー） ── NWBrowser
 ## コネクションの確立 ── NWConnection
