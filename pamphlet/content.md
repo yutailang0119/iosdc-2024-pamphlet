@@ -34,6 +34,14 @@ Network.frameworkがサポートする範囲は膨大で、すべてを網羅は
 
 ## ローカルネットワークのプライバシー
 
+　本稿で扱うローカルネットワークアクセスは、Info.plistでユーザーの許可が必要です。
+ローカルネットワークの使用には、[NSLocalNetworkUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocalnetworkusagedescription)に用途を記載します。
+Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/documentation/bundleresources/information_property_list/nsbonjourservices)にサービスタイプを宣言します。
+詳しくはWWDC20の動画[Support local network privacy in your app](https://developer.apple.com/videos/play/wwdc2020/10110/)を参照してください。
+
+　また、iPhoneやMacのネットワーク設定によって、ローカルネットワークの通信は制限されることがあります。
+一時的にFirewallの設定を見直してください。
+
 # Network.frameworkの概観
 ## サポートする通信プロトコル
 ## NWPathMonitorで通信状態を監視
