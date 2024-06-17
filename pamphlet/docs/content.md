@@ -105,7 +105,7 @@ AirPlayは、`_airplay._tcp`でTCPサービスを告知しています。
 
 　Network.frameworkでBonjourサービスの検出は、[`NWBrowser`](https://developer.apple.com/documentation/network/nwbrowser)を使用します。
 サービスタイプ`_airplay._tcp`を指定して`NWBrowser`を初期化し、[`browseResultsChangedHandler`](https://developer.apple.com/documentation/network/nwbrowser/3200395-browseresultschangedhandler)で検出結果の変化を受け取ります。
-[`start(queue:)`](https://developer.apple.com/documentation/network/nwbrowser/3200402-start)で、検出を開始します。
+[`start(queue:)`](https://developer.apple.com/documentation/network/nwbrowser/3200402-start)で、検出を開始します（**図1**）。
 
 ```swift
 func browse() -> AsyncStream<Set<NWBrowser.Result>> {
@@ -173,7 +173,7 @@ let browser = NWBrowser(
 )
 ```
 
-　`NWListener`が告知しているサービスの一覧が検出されます。
+　`NWListener`が告知しているサービスの一覧が検出されます（**図2**）。
 
 ![_example._udpの検出](../images/02.png)
 
@@ -213,7 +213,7 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 }
 ```
 
-　`NWListener`では、通知された`NWConnection`を使って通信を開始します。
+　`NWListener`では、通知された`NWConnection`を使って通信を開始します（**図3**）。
 
 ![確立したコネクションの通信画面](../images/03.png)
 
@@ -266,6 +266,8 @@ func receiveMessages() -> AsyncThrowingStream<Data, Error> {
   }
 }
 ```
+
+　パネルをタップするごとに、画面の状態を送信します（**図4**）。
 
 ![送受信したデータの表示](../images/04.png)
 
