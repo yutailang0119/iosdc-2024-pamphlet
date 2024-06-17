@@ -83,6 +83,13 @@ Appleデバイスでローカルネットワークを利用するには、Bonjou
 　Network.frameworkを使ったBonjourサービスの検出について解説します。
 
 ## Bonjour
+
+　Bonjourは、Appleが開発したゼロ・コンフィギュレーション技術で、IPアドレスやホスト名を入力せずに接続する方法を提供します。
+ビデオやオーディオのストリーミング、peer-to-peerゲーム、プリンター、カメラ、ホームデバイスとの通信の基盤となります。
+たとえば、同じネットワーク上のAirPrintのプリンター自動検出やHomeKitへの接続に使用されます。
+
+　現在ではAppleデバイスに限らず、WindowsやLinuxなどの主要プラットフォームがサポートしています。
+
 ## Network.frameworkを用いたAirPlayの検出
 ### AirPlay
 ### NWBrowserでのAirPlay検出
