@@ -198,6 +198,25 @@ connection.start(queue: .main)
 　UDPの場合、[`send(content:contentContext:isComplete:completion:)`](https://developer.apple.com/documentation/network/nwconnection/3003626-send)で一度データを送信することで、`NWListener`側のコネクションも起動します。
 
 ### Bonjourサービス告知側のコネクション
+
+　`NWListener`で告知しているサービスにコネクションが確立すると、[`newConnectionHandler`](https://developer.apple.com/documentation/network/nwlistener/2998663-newconnectionhandler)に通知されます。
+
+```swift
+func host() -> AsyncThrowingStream<NWConnection, Error> {
+  AsyncThrowingStream { continuation in
+    （省略）
+      listener.newConnectionHandler = { connection in
+        continuation.yield(connection)
+      }
+    （省略）
+  }
+}
+```
+
+　`NWListener`では、通知された`NWConnection`を使って通信を開始します。
+
+<!-- TODO: スクリーンショット -->
+
 ## データの送受信
 ### 送信側の実装
 ### 受信側の実装
