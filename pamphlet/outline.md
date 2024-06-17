@@ -9,7 +9,7 @@
 # Network.frameworkの概観
 ## サポートする通信プロトコル
 ## NWPathMonitorで通信状態を監視
-## Network.framework登場以前
+## Network.frameworkの登場以前
 
 # Bonjourを用いたネットワーク上のサービスの検出
 ## Bonjour
