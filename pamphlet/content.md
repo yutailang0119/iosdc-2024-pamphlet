@@ -22,6 +22,11 @@ Network.frameworkがサポートする範囲は膨大で、すべてを網羅は
 また、質問などは[issues](https://github.com/yutailang0119/iosdc-2024-pamphlet/issues)から連絡ください。
 
 ## 開発環境
+
+　本稿の内容は、開発環境としてmacOS Sonoma 14.5（23F79）とXcode 15.4（15F31d）を使用して動作を確認しています。
+開発言語にはXcodeに付属のSwift 5.10を利用します。
+サンプルコードの実行は、iOS 17.5（21F79）を対象とします。
+
 ## 権利・ライセンス
 ## ローカルネットワークのプライバシー
 
