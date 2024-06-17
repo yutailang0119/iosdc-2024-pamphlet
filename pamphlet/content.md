@@ -218,6 +218,10 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 <!-- TODO: スクリーンショット -->
 
 ## データの送受信
+
+　コネクションの確立ができたので、`NWConnection`を通して双方向にデータの送受信を行います。
+例は`Codable`に準拠した`ConnectionData`を`Data`に変換してやりとりします。
+
 ### 送信側の実装
 ### 受信側の実装
 
