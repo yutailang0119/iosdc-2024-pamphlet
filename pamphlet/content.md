@@ -178,6 +178,12 @@ let browser = NWBrowser(
 <!-- TODO: スクリーンショット -->
 
 ## コネクションの確立 ── NWConnection
+
+　告知、検出がそれぞれできたので、コネクションを確立します。
+Network.frameworkでは[`NWConnection`](https://developer.apple.com/documentation/network/nwconnection)を使用します。
+
+　例ではUDPのため、TCPのようなハンドシェイクを経てコネクションが確立されるというわけではありません。
+
 ### Bonjourサービス検出側のコネクション
 ### Bonjourサービス告知側のコネクション
 ## データの送受信
