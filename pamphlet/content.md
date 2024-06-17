@@ -274,3 +274,10 @@ func receiveMessages() -> AsyncThrowingStream<Data, Error> {
 GitHubリポジトリにはTCPでの通信も用意したので、参照してください。
 
 # まとめ
+
+　Bonjourとローカルネットワーク通信の実装を通して、Network.frameworkについて解説しました。
+ローカルネットワークでの通信には、[Core Bluetooth](https://developer.apple.com/documentation/corebluetooth)や[Multipeer Connectivity](https://developer.apple.com/documentation/multipeerconnectivity)もあります。
+状況に合わせた選択肢を持っているとよいでしょう。
+
+　Network.frameworkが`URLSession`の内部で使用されていると説明した通り、インターネットへの接続も実装できます。
+HTTP通信を再実装してみるのも、よい題材になりそうです。
