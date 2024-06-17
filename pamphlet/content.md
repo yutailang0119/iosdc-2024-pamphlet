@@ -159,6 +159,24 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 ```
 
 ## Bonjourサービスの検出（ディスカバー） ── NWBrowser
+
+　`NWListener`が告知しているBonjourサービスの検出は、前述の`NWBrowser`を使用します。
+サービスタイプを`_example._udp`、[`NWParameters`](https://developer.apple.com/documentation/network/nwparameters)の指定を[`.udp`](https://developer.apple.com/documentation/network/nwparameters/2998711-udp)に変更します。
+
+```swift
+let browser = NWBrowser(
+  for: .bonjour(
+    type: "_example._udp",
+    domain: nil
+  ),
+  using: .udp
+)
+```
+
+　`NWListener`が告知しているサービスの一覧が検出されます。
+
+<!-- TODO: スクリーンショット -->
+
 ## コネクションの確立 ── NWConnection
 ### Bonjourサービス検出側のコネクション
 ### Bonjourサービス告知側のコネクション
