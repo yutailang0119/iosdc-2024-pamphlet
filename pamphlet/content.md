@@ -45,7 +45,7 @@ Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/docu
 # Network.frameworkの概観
 
 　Network.frameworkは、データ送受信のためのネットワーク接続用フレームワークです。
-URLSessionの内部でも使用されており、多くのアプリを支えています。
+[`URLSession`](https://developer.apple.com/documentation/foundation/urlsession)の内部でも使用されており、多くのアプリを支えています。
 
 ## サポートする通信プロトコル
 
