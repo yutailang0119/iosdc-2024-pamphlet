@@ -223,6 +223,23 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 例は`Codable`に準拠した`ConnectionData`を`Data`に変換してやりとりします。
 
 ### 送信側の実装
+
+　データの送信は、前述の`send(content:contentContext:isComplete:completion:)`を使います。
+UDPのようなデータグラムプロトコルでは、`isComplete`はコンテンツが完全なデータグラムを表していることを示します。
+この例では、常に完全なデータを送信するため、`isComplete: true`としています。
+
+```swift
+let content = try? encoder.encode(connectionData)
+connection.send(
+  content: content,
+  contentContext: .defaultMessage,
+  isComplete: true,
+  completion: .contentProcessed { error in
+    print(error)
+  }
+)
+```
+
 ### 受信側の実装
 
 # まとめ
