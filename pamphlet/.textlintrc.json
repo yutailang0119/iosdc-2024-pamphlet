@@ -2,7 +2,9 @@
   "plugins": {},
   "filters": {},
   "rules": {
-    "preset-ja-technical-writing": true,
+    "preset-ja-technical-writing": {
+      "arabic-kanji-numbers": false
+    },
     "prh": {
       "rulePaths": [
         "prh.yml"
