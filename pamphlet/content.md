@@ -48,6 +48,15 @@ Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/docu
 URLSessionの内部でも使用されており、多くのアプリを支えています。
 
 ## サポートする通信プロトコル
+
+　Network.frameworkを使用することで、TLS、TCP、UDPなどの主要な通信プロトコルに直接アクセスが可能です。
+TCPは[NWProtocolTLS](https://developer.apple.com/documentation/network/nwprotocoltls)といった、プロトコルに対応するclassがそれぞれ用意されています。
+iOS 13では[NWProtocolWebSocket](https://developer.apple.com/documentation/network/nwprotocolwebsocket)でWebSocket、iOS 15では[NWProtocolQUIC](https://developer.apple.com/documentation/network/nwprotocoludp)でQUICのサポートが追加されました。
+
+　さらに[NWProtocolFramer](https://developer.apple.com/documentation/network/nwprotocolframer)を使って、独自プロトコルでの通信も実装できます。
+従来のソケット通信の複雑なバイト列を扱うことなく、構造化されたメッセージの読み取りが可能です。
+詳しくはWWDC19の動画[Advances in Networking, Part 2](https://developer.apple.com/videos/play/wwdc2019/713/)を参照してください。
+
 ## NWPathMonitorで通信状態を監視
 ## Network.frameworkの登場以前
 
