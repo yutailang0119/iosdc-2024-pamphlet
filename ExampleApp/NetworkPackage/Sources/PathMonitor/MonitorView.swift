@@ -70,7 +70,7 @@ public struct MonitorView: View {
             continuation.onTermination = { _ in
                 monitor.cancel()
             }
-            monitor.start(queue: .main)
+            monitor.start(queue: .global(qos: .background))
         }
     }
 }
