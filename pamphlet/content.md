@@ -91,6 +91,10 @@ Appleデバイスでローカルネットワークを利用するには、Bonjou
 　現在ではAppleデバイスに限らず、WindowsやLinuxなどの主要プラットフォームがサポートしています。
 
 ## Network.frameworkを用いたAirPlayの検出
+
+　Appleデバイスに囲まれた生活を送る私たちの周りには、Apple TVなどのAirPlay対応デバイスが溢れています。
+Network.frameworkを使って、同じネットワーク上のAirPlayを検出してみます。
+
 ### AirPlay
 ### NWBrowserでのAirPlay検出
 
