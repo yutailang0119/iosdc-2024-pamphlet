@@ -136,6 +136,28 @@ func browse() -> AsyncStream<Set<NWBrowser.Result>> {
 例は`_example._udp`で接続し、パネルの状態を相互に送り合うアプリです。
 
 ## Bonjourサービスの告知（アドバタイズ） ── NWListener
+
+　サービスの告知は、[`NWListener`](https://developer.apple.com/documentation/network/nwlistener)を使用します。
+初期化した`NWListener`にサービスタイプ`_example._udp`を指定した[`NWListener.Service`](https://developer.apple.com/documentation/network/nwlistener/service)を設定します。
+[`start(queue:)`](https://developer.apple.com/documentation/network/nwlistener/2998669-start)で、告知を開始します。
+
+```swift
+func host() -> AsyncThrowingStream<NWConnection, Error> {
+  AsyncThrowingStream { continuation in
+    do {
+      let listener = try NWListener(using: .udp)
+      listener.service = NWListener.Service(name: uuid, type: "_example._udp")
+      continuation.onTermination = { _ in
+        listener.cancel()
+      }
+      listener.start(queue: .main)
+    } catch {
+      continuation.finish(throwing: error)
+    }
+  }
+}
+```
+
 ## Bonjourサービスの検出（ディスカバー） ── NWBrowser
 ## コネクションの確立 ── NWConnection
 ### Bonjourサービス検出側のコネクション
