@@ -103,6 +103,33 @@ AirPlayは、`_airplay._tcp`でTCPサービスを告知しています。
 
 ### NWBrowserでのAirPlay検出
 
+　Network.frameworkでBonjourサービスの検出は、[`NWBrowser`](https://developer.apple.com/documentation/network/nwbrowser)を使用します。
+サービスタイプ`_airplay._tcp`を指定して`NWBrowser`を初期化し、[`browseResultsChangedHandler`](https://developer.apple.com/documentation/network/nwbrowser/3200395-browseresultschangedhandler)で検出結果の変化を受け取ります。
+[`start(queue:)`](https://developer.apple.com/documentation/network/nwbrowser/3200402-start)で、検出を開始します。
+
+```swift
+func browse() -> AsyncStream<Set<NWBrowser.Result>> {
+  AsyncStream { continuation in
+    let browser = NWBrowser(
+      for: .bonjour(
+        type: "_airplay._tcp",
+        domain: nil
+      ),
+      using: .tcp
+    )
+    browser.browseResultsChangedHandler = { results, changes in
+      continuation.yield(results)
+    }
+    continuation.onTermination = { _ in
+      browser.cancel()
+    }
+    browser.start(queue: .main)
+  }
+}
+```
+
+<!-- TODO: スクリーンショット -->
+
 # Network.frameworkでのUDP送受信
 ## Bonjourサービスの告知（アドバタイズ） ── NWListener
 ## Bonjourサービスの検出（ディスカバー） ── NWBrowser
