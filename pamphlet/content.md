@@ -242,4 +242,35 @@ connection.send(
 
 ### 受信側の実装
 
+　受信したデータは、[`receiveMessage(completion:)`](https://developer.apple.com/documentation/network/nwconnection/3020638-receivemessage)で取得できます。
+これまで登場したハンドラと異なり、呼び出しごとに一度だけ実行されるため、複数回データを受信するには再度実行する必要があります。
+この実装でも、[`AsyncThrowingStream`](https://developer.apple.com/documentation/swift/asyncthrowingstream)は便利です。
+
+```swift
+func receiveMessages() -> AsyncThrowingStream<Data, Error> {
+  AsyncThrowingStream { continuation in
+    func receiveMessage() {
+      connection.receiveMessage { content, contentContext, isComplete, error in
+        if let content {
+          continuation.yield(content)
+          receiveMessage()
+        } else if let error {
+          print(error)
+          connection.cancel()
+        }
+      }
+    }
+
+    receiveMessage()
+    connection.start(queue: .main)
+  }
+}
+```
+
+<!-- TODO: スクリーンショット -->
+
+　簡略化しましたが、`Codable`のdecode、encodeは実行コストが高く、高頻度の通信には向きません。
+また、実用にはパスコードの入力を挟むなど、コネクションの安全性も考慮する必要があるでしょう。
+GitHubリポジトリにはTCPでの通信も用意したので、参照してください。
+
 # まとめ
