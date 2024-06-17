@@ -14,6 +14,13 @@ Network.frameworkがサポートする範囲は膨大で、すべてを網羅は
 　本稿を読む上での注意事項を説明します。
 
 ## GitHubリポジトリ
+
+　本稿は[yutailang0119/iosdc-2024-pamphlet](https://github.com/yutailang0119/iosdc-2024-pamphlet)でも閲覧可能です。
+サンプルコードの全体は、リポジトリの`/ExampleApp.xcworkspace`を開き、参照してください。
+
+　内容に訂正がある場合、GitHubリポジトリで訂正します。
+また、質問などは[issues](https://github.com/yutailang0119/iosdc-2024-pamphlet/issues)から連絡ください。
+
 ## 開発環境
 ## 権利・ライセンス
 ## ローカルネットワークのプライバシー
