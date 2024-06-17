@@ -54,9 +54,11 @@ struct ConnectedView: View {
             case .host:
                 Text("Host")
                     .foregroundStyle(.blue)
+                    .font(.title)
             case .client:
                 Text("Client")
-                    .foregroundStyle(.red)
+                    .foregroundStyle(.yellow)
+                    .font(.title)
             }
             Grid {
                 GridRow {
@@ -193,7 +195,7 @@ extension ConnectionData.Row.Item: View {
             case .host:
                 Color.blue
             case .client:
-                Color.red
+                Color.yellow
             }
         }
         .scaledToFit()
