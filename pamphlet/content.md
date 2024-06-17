@@ -58,6 +58,15 @@ iOS 13では[NWProtocolWebSocket](https://developer.apple.com/documentation/netw
 詳しくはWWDC19の動画[Advances in Networking, Part 2](https://developer.apple.com/videos/play/wwdc2019/713/)を参照してください。
 
 ## NWPathMonitorで通信状態を監視
+
+　Network.frameworkの機能の一つは、ネットワーク状況の監視です。
+監視には[`NWPathMonitor`](https://developer.apple.com/documentation/network/nwpathmonitor)を使用します。
+具体的な使用方法は、サンプルコードを参照してください。
+
+　`NWPathMonitor`は、実際に通信が成功するかを正確に反映するものではないことに注意します。
+ユーザーによって行われた通信の場合、常に接続を試みるべきです。
+ネットワークサービスが利用可能かを推測したり、その判断をキャッシュしたりしないでください。
+
 ## Network.frameworkの登場以前
 
 # Bonjourを用いたネットワーク上のサービスの検出
