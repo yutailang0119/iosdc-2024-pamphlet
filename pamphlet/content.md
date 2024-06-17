@@ -75,6 +75,13 @@ iOS 13では[NWProtocolWebSocket](https://developer.apple.com/documentation/netw
 Network.frameworkの利点は、単純あ接続の確立、データ転送の最適化、組込みのセキュリティ、シームレスなモビリティ、そしてSwiftのフレームワークであることです。
 
 # Bonjourを用いたネットワーク上のサービスの検出
+
+　ネットワークはインターネットに接続するだけではありません。
+ローカルネットワーク上のほかのデバイスとやりとりすることがあります。
+Appleデバイスでローカルネットワークを利用するには、Bonjour（ボンジュール）が最適です。
+
+　Network.frameworkを使ったBonjourサービスの検出について解説します。
+
 ## Bonjour
 ## Network.frameworkを用いたAirPlayの検出
 ### AirPlay
