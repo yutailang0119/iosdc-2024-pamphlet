@@ -8,10 +8,10 @@
 
 # Network.frameworkの概観
 ## サポートする通信プロトコル
-## NWPathMonitorで通信状態を監視
+## 通信状況のモニタリング ── NWPathMonitor
 ## Network.frameworkの登場以前
 
-# Bonjourを用いたネットワーク上のサービスの検出
+# Bonjourを用いたネットワーク上サービスの検出
 ## Bonjour
 ## Network.frameworkを用いたAirPlayの検出
 ### AirPlay
@@ -24,7 +24,7 @@
 ### Bonjourサービス検出側のコネクション
 ### Bonjourサービス告知側のコネクション
 ## データの送受信
-### 送信側の実装
-### 受信側の実装
+### データ送信の実装
+### データ受信の実装
 
 # まとめ

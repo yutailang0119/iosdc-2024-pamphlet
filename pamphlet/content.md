@@ -57,7 +57,7 @@ iOS 13では[NWProtocolWebSocket](https://developer.apple.com/documentation/netw
 従来のソケット通信の複雑なバイト列を扱うことなく、構造化されたメッセージの読み取りが可能です。
 詳しくはWWDC19の動画[Advances in Networking, Part 2](https://developer.apple.com/videos/play/wwdc2019/713/)を参照してください。
 
-## NWPathMonitorで通信状態を監視
+## 通信状況のモニタリング ── NWPathMonitor
 
 　Network.frameworkの機能の一つは、ネットワーク状況の監視です。
 監視には[`NWPathMonitor`](https://developer.apple.com/documentation/network/nwpathmonitor)を使用します。
@@ -74,7 +74,7 @@ iOS 13では[NWProtocolWebSocket](https://developer.apple.com/documentation/netw
 これらは、C言語との相互運用やポインタを意識した実装が必要で、Swiftに慣れ親しんだ開発者には難解です。
 Network.frameworkの利点は、単純あ接続の確立、データ転送の最適化、組込みのセキュリティ、シームレスなモビリティ、そしてSwiftのフレームワークであることです。
 
-# Bonjourを用いたネットワーク上のサービスの検出
+# Bonjourを用いたネットワーク上サービスの検出
 
 　ネットワークはインターネットに接続するだけではありません。
 ローカルネットワーク上のほかのデバイスとやりとりすることがあります。
@@ -222,7 +222,7 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 　コネクションの確立ができたので、`NWConnection`を通して双方向にデータの送受信を行います。
 例は`Codable`に準拠した`ConnectionData`を`Data`に変換してやりとりします。
 
-### 送信側の実装
+### データ送信の実装
 
 　データの送信は、前述の`send(content:contentContext:isComplete:completion:)`を使います。
 UDPのようなデータグラムプロトコルでは、`isComplete`はコンテンツが完全なデータグラムを表していることを示します。
@@ -240,7 +240,7 @@ connection.send(
 )
 ```
 
-### 受信側の実装
+### データ受信の実装
 
 　受信したデータは、[`receiveMessage(completion:)`](https://developer.apple.com/documentation/network/nwconnection/3020638-receivemessage)で取得できます。
 これまで登場したハンドラと異なり、呼び出しごとに一度だけ実行されるため、複数回データを受信するには再度実行する必要があります。
