@@ -128,7 +128,7 @@ func browse() -> AsyncStream<Set<NWBrowser.Result>> {
 }
 ```
 
-![_airplay._tcpの検出](./images/01.png)
+![_airplay._tcpの検出](../images/01.png)
 
 # Network.frameworkでのUDP送受信
 
@@ -175,7 +175,7 @@ let browser = NWBrowser(
 
 　`NWListener`が告知しているサービスの一覧が検出されます。
 
-![_example._udpの検出](./images/02.png)
+![_example._udpの検出](../images/02.png)
 
 ## コネクションの確立 ── NWConnection
 
@@ -215,7 +215,7 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 
 　`NWListener`では、通知された`NWConnection`を使って通信を開始します。
 
-![確立したコネクションの通信画面](./images/03.png)
+![確立したコネクションの通信画面](../images/03.png)
 
 ## データの送受信
 
@@ -267,7 +267,7 @@ func receiveMessages() -> AsyncThrowingStream<Data, Error> {
 }
 ```
 
-![送受信したデータの表示](./images/04.png)
+![送受信したデータの表示](../images/04.png)
 
 　簡略化しましたが、`Codable`のdecode、encodeは実行コストが高く、高頻度の通信には向きません。
 また、実用にはパスコードの入力を挟むなど、コネクションの安全性も考慮する必要があるでしょう。
