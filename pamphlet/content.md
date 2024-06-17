@@ -185,6 +185,18 @@ Network.frameworkでは[`NWConnection`](https://developer.apple.com/documentatio
 　例ではUDPのため、TCPのようなハンドシェイクを経てコネクションが確立されるというわけではありません。
 
 ### Bonjourサービス検出側のコネクション
+
+　Bonjourサービスを検出する側から、コネクションの確立を試みます。
+検出した[`NWBrowser.Result`](https://developer.apple.com/documentation/network/nwbrowser/result)から[`NWEndpoint`](https://developer.apple.com/documentation/network/nwendpoint)を取得し、`NWConnection`を初期化します。
+[`start(queue:)`](https://developer.apple.com/documentation/network/nwconnection/2998575-start)で、コネクションを確立を開始します。
+
+```swift
+let connection = NWConnection(to: result.endpoint, using: .udp)
+connection.start(queue: .main)
+```
+
+　UDPの場合、[`send(content:contentContext:isComplete:completion:)`](https://developer.apple.com/documentation/network/nwconnection/3003626-send)で一度データを送信することで、`NWListener`側のコネクションも起動します。
+
 ### Bonjourサービス告知側のコネクション
 ## データの送受信
 ### 送信側の実装
