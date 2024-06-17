@@ -43,6 +43,10 @@ Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/docu
 一時的にFirewallの設定を見直してください。
 
 # Network.frameworkの概観
+
+　Network.frameworkは、データ送受信のためのネットワーク接続用フレームワークです。
+URLSessionの内部でも使用されており、多くのアプリを支えています。
+
 ## サポートする通信プロトコル
 ## NWPathMonitorで通信状態を監視
 ## Network.frameworkの登場以前
