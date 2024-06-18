@@ -29,8 +29,8 @@ Network.frameworkがサポートする範囲は膨大で、すべてを網羅は
 
 ## 権利・ライセンス
 
-　本稿の全文、GitHubリポジトリ`/pamphlet`以下は、クリエイティブ・コモンズの[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)で管理します。
-サンプルコード、GitHubリポジトリ`/ExampleApp`以下は、MITライセンスで管理します。
+　本稿の全文、GitHubリポジトリ`/pamphlet`以下は、クリエイティブ・コモンズの[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)で公開します。
+サンプルコード、GitHubリポジトリ`/ExampleApp`以下は、MITライセンスで利用できます。
 
 ## ローカルネットワークのプライバシー
 
