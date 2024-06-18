@@ -5,7 +5,7 @@ https://fortee.jp/iosdc-japan-2024/proposal/38a4ff87-2cc1-4494-b8e6-63fcf506430f
 このフレームワークは、iOS 12.0をはじめとしたWWDC18発表のAppleプラットフォームで使用できます。
 また、visionOSもサポートしています。
 
-　本稿ではNetwork.frameworkを活用し、NWBrowserでのネットワークサービスの検出と、NWListenerおよびNWConnectionを用いた通信について解説します。
+　本稿ではNetwork.frameworkを活用し、NWBrowserでのネットワークサービスの検出と、[`NWListener`](https://developer.apple.com/documentation/network/nwlistener)および[`NWConnection`](https://developer.apple.com/documentation/network/nwconnection)を用いた通信について解説します。
 また、Swift Concurrencyと組み合わせて、2024年段階のアプローチでサンプルコードを提供します。
 Network.frameworkがサポートする範囲は膨大で、すべてを網羅はできませんが、取り組むきっかけとなる内容を扱います。
 
@@ -50,10 +50,10 @@ Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/docu
 ## サポートする通信プロトコル
 
 　Network.frameworkを使用することで、TLS、TCP、UDPなどの主要な通信プロトコルに直接アクセスが可能です。
-TCPは[NWProtocolTLS](https://developer.apple.com/documentation/network/nwprotocoltls)といった、プロトコルに対応するclassがそれぞれ用意されています。
-iOS 13では[NWProtocolWebSocket](https://developer.apple.com/documentation/network/nwprotocolwebsocket)でWebSocket、iOS 15では[NWProtocolQUIC](https://developer.apple.com/documentation/network/nwprotocoludp)でQUICのサポートが追加されました。
+TCPは[`NWProtocolTLS`](https://developer.apple.com/documentation/network/nwprotocoltls)といった、プロトコルに対応するclassがそれぞれ用意されています。
+iOS 13では[`NWProtocolWebSocket`](https://developer.apple.com/documentation/network/nwprotocolwebsocket)でWebSocket、iOS 15では[`NWProtocolQUIC`](https://developer.apple.com/documentation/network/nwprotocoludp)でQUICのサポートが追加されました。
 
-　さらに[NWProtocolFramer](https://developer.apple.com/documentation/network/nwprotocolframer)を使って、独自プロトコルでの通信も実装できます。
+　さらに[`NWProtocolFramer`](https://developer.apple.com/documentation/network/nwprotocolframer)を使って、独自プロトコルでの通信も実装できます。
 従来のソケット通信の複雑なバイト列を扱うことなく、構造化されたメッセージの読み取りが可能です。
 詳しくはWWDC19の動画[Advances in Networking, Part 2](https://developer.apple.com/videos/play/wwdc2019/713/)を参照してください。
 
@@ -137,7 +137,7 @@ func browse() -> AsyncStream<Set<NWBrowser.Result>> {
 
 ## Bonjourサービスの告知（アドバタイズ） ── NWListener
 
-　サービスの告知は、[`NWListener`](https://developer.apple.com/documentation/network/nwlistener)を使用します。
+　サービスの告知は、`NWListener`を使用します。
 初期化した`NWListener`にサービスタイプ`_example._udp`を指定した[`NWListener.Service`](https://developer.apple.com/documentation/network/nwlistener/service)を設定します。
 [`start(queue:)`](https://developer.apple.com/documentation/network/nwlistener/2998669-start)で、告知を開始します。
 
@@ -180,7 +180,7 @@ let browser = NWBrowser(
 ## コネクションの確立 ── NWConnection
 
 　告知、検出がそれぞれできたので、コネクションを確立します。
-Network.frameworkでは[`NWConnection`](https://developer.apple.com/documentation/network/nwconnection)を使用します。
+Network.frameworkでは`NWConnection`を使用します。
 
 　例ではUDPのため、TCPのようなハンドシェイクを経てコネクションが確立されるというわけではありません。
 
