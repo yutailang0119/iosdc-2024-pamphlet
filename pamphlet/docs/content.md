@@ -221,7 +221,7 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 ## データの送受信
 
 　コネクションの確立ができたので、`NWConnection`を通して双方向にデータの送受信を行います。
-例は`Codable`に準拠した`ConnectionData`を`Data`に変換してやりとりします。
+例は[`Codable`](https://developer.apple.com/documentation/swift/codable)に準拠した`ConnectionData`を`Data`に変換してやりとりします。
 
 ### データ送信の実装
 
