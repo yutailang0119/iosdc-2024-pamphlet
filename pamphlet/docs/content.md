@@ -34,7 +34,8 @@ Network.frameworkがサポートする範囲は膨大で、すべてを網羅は
 
 ## ローカルネットワークのプライバシー
 
-　本稿で扱うローカルネットワークアクセスは、Info.plistでユーザーの許可が必要です。
+　本稿で扱うローカルネットワークアクセスは、ユーザーの許可が必要です。
+Info.plistに対応するキーを指定します。
 ローカルネットワークの使用には、[NSLocalNetworkUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocalnetworkusagedescription)に用途を記載します。
 Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/documentation/bundleresources/information_property_list/nsbonjourservices)にサービスタイプを宣言します。
 詳しくはWWDC20の動画[Support local network privacy in your app](https://developer.apple.com/videos/play/wwdc2020/10110/)を参照してください。
