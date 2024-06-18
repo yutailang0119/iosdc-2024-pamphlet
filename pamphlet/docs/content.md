@@ -2,7 +2,7 @@
 https://fortee.jp/iosdc-japan-2024/proposal/38a4ff87-2cc1-4494-b8e6-63fcf506430f
 
 　[Network.framework](https://developer.apple.com/documentation/network)は、2018年6月の「World Wide Developers Conference 2018」（以下、WWDC18）で発表されました。
-このフレームワークは、iOS 12.0をはじめとしたWWDC18発表のAppleプラットフォームで使用できます。
+このフレームワークは、iOS 12.0をはじめとしたWWDC18発表以降のAppleプラットフォームで使用できます。
 また、visionOSもサポートしています。
 
 　本稿ではNetwork.frameworkを活用し、NWBrowserでのネットワークサービスの検出と、[`NWListener`](https://developer.apple.com/documentation/network/nwlistener)および[`NWConnection`](https://developer.apple.com/documentation/network/nwconnection)を用いた通信について解説します。
