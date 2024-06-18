@@ -262,6 +262,9 @@ func receiveMessages() -> AsyncThrowingStream<Data, Error> {
       }
     }
 
+    continuation.onTermination = { _ in
+      connection.cancel()
+    }
     receiveMessage()
     connection.start(queue: .main)
   }
