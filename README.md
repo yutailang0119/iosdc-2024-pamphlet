@@ -8,8 +8,8 @@ https://fortee.jp/iosdc-japan-2024/proposal/38a4ff87-2cc1-4494-b8e6-63fcf506430f
 
 ## LICENSE
 
-　本稿の全文、GitHubリポジトリ`/pamphlet`以下は、クリエイティブ・コモンズの[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)で管理します。
-サンプルコード、GitHubリポジトリ`/ExampleApp`以下は、MITライセンスで管理します。
+　本稿の全文、GitHubリポジトリ`/pamphlet`以下は、クリエイティブ・コモンズの[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)の基で公開します。
+サンプルコード、GitHubリポジトリ`/ExampleApp`以下は、MITライセンスに基づいて利用できます。
 
 This article and the GitHub repository `/pamphlet` are licensed under the Creative Commons [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ja).
-The code and the GitHub repository `/ExampleApp` are licensed under the MIT License.
+The code and the GitHub repository `/ExampleApp` are available under the MIT License.
