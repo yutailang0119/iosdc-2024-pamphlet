@@ -40,8 +40,8 @@ Info.plistに対応するキーを指定します。
 Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/documentation/bundleresources/information_property_list/nsbonjourservices)にサービスタイプを宣言します。
 詳しくはWWDC20の動画[Support local network privacy in your app](https://developer.apple.com/videos/play/wwdc2020/10110/)を参照してください。
 
-　また、iPhoneやMacのネットワーク設定によって、ローカルネットワークの通信は制限されることがあります。
-一時的にFirewallの設定を見直してください。
+　iPhoneやMacのネットワーク設定によって、ローカルネットワークの通信は制限されることがあります。
+Firewallの設定を確認し、一時的なオフを検討してください。
 
 # Network.frameworkの概観
 
