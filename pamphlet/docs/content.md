@@ -227,7 +227,7 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 
 　データの送信は、前述の`send(content:contentContext:isComplete:completion:)`を使います。
 UDPのようなデータグラムプロトコルでは、`isComplete`はコンテンツが完全なデータグラムを表していることを示します。
-この例では、常に完全なデータを送信するため、`isComplete: true`としています。
+例では、常に完結したデータを送信するため、`isComplete: true`としています。
 
 ```swift
 let content = try? encoder.encode(connectionData)
