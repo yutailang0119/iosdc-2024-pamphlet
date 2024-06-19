@@ -6,7 +6,7 @@ https://fortee.jp/iosdc-japan-2024/proposal/38a4ff87-2cc1-4494-b8e6-63fcf506430f
 また、visionOSもサポートしています。
 
 　本稿ではNetwork.frameworkを活用し、NWBrowserでのネットワークサービスの検出と、[`NWListener`](https://developer.apple.com/documentation/network/nwlistener)および[`NWConnection`](https://developer.apple.com/documentation/network/nwconnection)を用いた通信について解説します。
-また、Swift Concurrencyと組み合わせて、2024年段階のアプローチでサンプルコードを提供します。
+また、Swift Concurrencyと組み合わせて、2024年時点のアプローチでサンプルコードを提供します。
 Network.frameworkがサポートする範囲は膨大で、すべてを網羅はできませんが、取り組むきっかけとなる内容を扱います。
 
 # はじめに
