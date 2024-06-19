@@ -38,7 +38,7 @@ Network.frameworkがサポートする範囲は膨大で、すべてを網羅は
 Info.plistに対応するキーを指定します。
 ローカルネットワークの使用には、[NSLocalNetworkUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocalnetworkusagedescription)に用途を記載します。
 Bonjourでの検出には、[NSBonjourServices](https://developer.apple.com/documentation/bundleresources/information_property_list/nsbonjourservices)にサービスタイプを宣言します。
-詳しくはWWDC20の動画[Support local network privacy in your app](https://developer.apple.com/videos/play/wwdc2020/10110/)を参照してください。
+詳しくはWWDC20の動画 ["Support local network privacy in your app"](https://developer.apple.com/videos/play/wwdc2020/10110/) を参照してください。
 
 　iPhoneやMacのネットワーク設定によって、ローカルネットワークの通信は制限されることがあります。
 Firewallの設定を確認し、一時的なオフを検討してください。
@@ -56,7 +56,7 @@ iOS 13では[`NWProtocolWebSocket`](https://developer.apple.com/documentation/ne
 
 　さらに[`NWProtocolFramer`](https://developer.apple.com/documentation/network/nwprotocolframer)を使って、独自プロトコルでの通信も実装できます。
 従来のソケット通信の複雑なバイト列を扱うことなく、構造化されたメッセージの読み取りが可能です。
-詳しくはWWDC19の動画[Advances in Networking, Part 2](https://developer.apple.com/videos/play/wwdc2019/713/)を参照してください。
+詳しくはWWDC19の動画 ["Advances in Networking, Part 2"](https://developer.apple.com/videos/play/wwdc2019/713/) を参照してください。
 
 ## 通信状況のモニタリング ── NWPathMonitor
 
@@ -100,7 +100,7 @@ Network.frameworkを使って、同じネットワーク上のAirPlayを検出�
 
 　Bonjourの検出には、告知（アドバタイズ）しているサービス名が必要です。
 AirPlayは、`_airplay._tcp`でTCPサービスを告知しています。
-より詳しい解説は[AppleデバイスでAirPlayを使用する](https://support.apple.com/ja-jp/guide/deployment/dep9151c4ace/web)を参照してください。
+より詳しい解説は ["AppleデバイスでAirPlayを使用する"](https://support.apple.com/ja-jp/guide/deployment/dep9151c4ace/web) を参照してください。
 
 ### NWBrowserでのAirPlay検出
 
