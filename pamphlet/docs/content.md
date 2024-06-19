@@ -98,7 +98,7 @@ Network.frameworkを使って、同じネットワーク上のAirPlayを検出�
 
 ### AirPlay
 
-　Bonjourの検出には、告知（アドバタイズ）しているサービス名を指定します。
+　Bonjourの検出には、告知（アドバタイズ）しているサービス名が必要です。
 AirPlayは、`_airplay._tcp`でTCPサービスを告知しています。
 より詳しい解説は[AppleデバイスでAirPlayを使用する](https://support.apple.com/ja-jp/guide/deployment/dep9151c4ace/web)を参照してください。
 
