@@ -181,9 +181,9 @@ let browser = NWBrowser(
 ## コネクションの確立 ── NWConnection
 
 　告知、検出がそれぞれできたので、コネクションを確立します。
-Network.frameworkでは`NWConnection`を使用します。
+Network.frameworkでは、`NWConnection`を使用して接続します。
 
-　例ではUDPのため、TCPのようなハンドシェイクを経てコネクションが確立されるというわけではありません。
+　例にするUDPでは、TCPのようなハンドシェイクを省略して、コネクションが確立されます。
 
 ### Bonjourサービス検出側のコネクション
 
