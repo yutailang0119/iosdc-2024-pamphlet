@@ -70,9 +70,9 @@ iOS 13では[`NWProtocolWebSocket`](https://developer.apple.com/documentation/ne
 ## Network.frameworkの登場以前
 
 　Network.frameworkの機能は、[CFNetwork.framework](https://developer.apple.com/documentation/cfnetwork)や
-[Foundation.framework](https://developer.apple.com/documentation/foundation)のNS prefixなAPIなどを駆使して、実装可能ではありました。
-これらは、C言語との相互運用やポインタを意識した実装が必要で、Swiftに慣れ親しんだ開発者には難解です。
-Network.frameworkの利点は、単純な接続の確立、データ転送の最適化、組込みのセキュリティ、シームレスなモビリティ、そしてSwiftのフレームワークであることです。
+[Foundation.framework](https://developer.apple.com/documentation/foundation)のNS prefixなAPIなどを駆使して、実装可能でした。
+しかし、C言語との相互運用やポインタを意識した実装が必要で、Swiftに慣れ親しんだ開発者には難解です。
+Network.frameworkの利点は、簡単な接続の確立、データ転送の最適化、組込みのセキュリティ、シームレスなモビリティ、そしてSwiftのフレームワークであることです。
 
 # Bonjourを用いたネットワーク上サービスの検出
 
