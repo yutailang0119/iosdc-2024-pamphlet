@@ -99,13 +99,13 @@ Network.frameworkを使って、同じネットワーク上のAirPlayを検出�
 ### AirPlay
 
 　Bonjourの検出には、告知（アドバタイズ）しているサービス名が必要です。
-AirPlayは、`_airplay._tcp`でTCPサービスを告知しています。
+AirPlayは "_airplay._tcp" でTCPサービスを告知しています。
 より詳しい解説は ["AppleデバイスでAirPlayを使用する"](https://support.apple.com/ja-jp/guide/deployment/dep9151c4ace/web) を参照してください。
 
 ### NWBrowserでのAirPlay検出
 
 　Network.frameworkでのBonjourサービスの検出は、[`NWBrowser`](https://developer.apple.com/documentation/network/nwbrowser)を使用します。
-サービスタイプ`_airplay._tcp`を指定して`NWBrowser`を初期化し、[`browseResultsChangedHandler`](https://developer.apple.com/documentation/network/nwbrowser/3200395-browseresultschangedhandler)で検出結果の変化を受け取ります。
+サービスタイプ "_airplay._tcp" を指定して`NWBrowser`を初期化し、[`browseResultsChangedHandler`](https://developer.apple.com/documentation/network/nwbrowser/3200395-browseresultschangedhandler)で検出結果の変化を受け取ります。
 [`start(queue:)`](https://developer.apple.com/documentation/network/nwbrowser/3200402-start)で、検出を開始します（**図1**）。
 
 ```swift
@@ -134,12 +134,12 @@ func browse() -> AsyncStream<Set<NWBrowser.Result>> {
 # Network.frameworkでのUDP送受信
 
 　UDPでのコネクション、データの送受信を解説します。
-例は`_example._udp`で接続し、パネルの状態を相互に送り合うアプリです。
+例は "_example._udp" で接続し、パネルの状態を相互に送り合うアプリです。
 
 ## Bonjourサービスの告知（アドバタイズ） ── NWListener
 
 　サービスの告知は、`NWListener`を使用します。
-初期化した`NWListener`にサービスタイプ`_example._udp`を指定した[`NWListener.Service`](https://developer.apple.com/documentation/network/nwlistener/service)を設定します。
+初期化した`NWListener`にサービスタイプ "_example._udp" を指定した[`NWListener.Service`](https://developer.apple.com/documentation/network/nwlistener/service)を設定します。
 [`start(queue:)`](https://developer.apple.com/documentation/network/nwlistener/2998669-start)で、告知を開始します。
 
 ```swift
@@ -162,7 +162,7 @@ func host() -> AsyncThrowingStream<NWConnection, Error> {
 ## Bonjourサービスの検出（ディスカバー） ── NWBrowser
 
 　`NWListener`が告知しているBonjourサービスの検出は、前述の`NWBrowser`を使用します。
-サービスタイプを`_example._udp`、[`NWParameters`](https://developer.apple.com/documentation/network/nwparameters)の指定を[`.udp`](https://developer.apple.com/documentation/network/nwparameters/2998711-udp)に変更します。
+サービスタイプを "_example._udp"、[`NWParameters`](https://developer.apple.com/documentation/network/nwparameters)の指定を[`.udp`](https://developer.apple.com/documentation/network/nwparameters/2998711-udp)に変更します。
 
 ```swift
 let browser = NWBrowser(
