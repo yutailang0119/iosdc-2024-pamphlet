@@ -174,7 +174,7 @@ let browser = NWBrowser(
 )
 ```
 
-　`NWListener`が告知しているサービスの一覧が検出されます（**図2**）。
+　`NWListener`が告知しているサービスの一覧を検出します（**図2**）。
 
 ![_example._udpの検出](../images/02.png)
 
