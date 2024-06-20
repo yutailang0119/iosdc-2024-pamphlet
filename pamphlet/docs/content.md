@@ -129,7 +129,7 @@ func browse() -> AsyncStream<Set<NWBrowser.Result>> {
 }
 ```
 
-![_airplay._tcpの検出](../images/01.png)
+!["_airplay._tcp" の検出](../images/01.png)
 
 # Network.frameworkでのUDP送受信
 
@@ -176,7 +176,7 @@ let browser = NWBrowser(
 
 　`NWListener`が告知しているサービスの一覧を検出します（**図2**）。
 
-![_example._udpの検出](../images/02.png)
+!["_example._udp" の検出](../images/02.png)
 
 ## コネクションの確立 ── NWConnection
 
