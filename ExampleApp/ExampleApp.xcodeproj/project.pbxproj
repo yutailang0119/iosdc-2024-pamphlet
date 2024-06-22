@@ -18,6 +18,7 @@
 		6D1F1FF32C0B923C00B6FBB6 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		6D1F1FF72C0B923D00B6FBB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D1F1FFA2C0B923D00B6FBB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6DF6379B2C271916008BC444 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 		6D1F1FF22C0B923C00B6FBB6 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				6DF6379B2C271916008BC444 /* Info.plist */,
 				6D1F1FF32C0B923C00B6FBB6 /* ExampleApp.swift */,
 				6D1F1FF72C0B923D00B6FBB6 /* Assets.xcassets */,
 				6D1F1FF92C0B923D00B6FBB6 /* Preview Content */,
@@ -278,6 +280,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ExampleApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExampleApp/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "ExampleApp uses the local network to connect with users around you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -307,6 +310,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ExampleApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ExampleApp/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "ExampleApp uses the local network to connect with users around you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
