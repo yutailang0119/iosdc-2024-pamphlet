@@ -5,7 +5,7 @@
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_airplay._tcp</string>
-		<string>_example._udp</string>
+		<string>_example._tcp</string>
 	</array>
 </dict>
 </plist>

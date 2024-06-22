@@ -29,7 +29,7 @@ public struct ConnectingView: View {
                 EmptyView()
             }
         }
-        .navigationTitle("_example._udp")
+        .navigationTitle("_example._tcp")
         .toolbar {
             ToolbarItem {
                 Button {
@@ -73,8 +73,8 @@ extension ConnectingView {
     private func host() -> AsyncThrowingStream<NWConnection, Error> {
         AsyncThrowingStream { continuation in
             do {
-                let listener = try NWListener(using: .udp)
-                listener.service = NWListener.Service(name: uuid, type: "_example._udp")
+                let listener = try NWListener(using: .tcp)
+                listener.service = NWListener.Service(name: uuid, type: "_example._tcp")
                 listener.stateUpdateHandler = { state in
                     switch state {
                     case .failed(let error):
@@ -103,10 +103,10 @@ extension ConnectingView {
         AsyncStream { continuation in
             let browser = NWBrowser(
                 for: .bonjour(
-                    type: "_example._udp",
+                    type: "_example._tcp",
                     domain: nil
                 ),
-                using: .udp
+                using: .tcp
             )
             browser.stateUpdateHandler = { state in
                 switch state {

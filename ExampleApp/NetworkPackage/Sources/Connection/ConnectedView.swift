@@ -34,18 +34,9 @@ struct ConnectedView: View {
     }
 
     init(endpoint: NWEndpoint, role: Role) {
-        self.connection = NWConnection(to: endpoint, using: .udp)
+        self.connection = NWConnection(to: endpoint, using: .tcp)
         self.role = role
         self.data = ConnectionData()
-
-        connection.send(
-            content: try? encoder.encode(ConnectionData()),
-            contentContext: .defaultMessage,
-            isComplete: true,
-            completion: .contentProcessed { error in
-                print(error)
-            }
-        )
     }
 
     public var body: some View {
@@ -145,7 +136,7 @@ extension ConnectedView {
     private func receiveMessages() -> AsyncThrowingStream<Data, Error> {
         AsyncThrowingStream { continuation in
             func receiveMessage() {
-                connection.receiveMessage { content, contentContext, isComplete, error in
+                connection.receive(minimumIncompleteLength: 0, maximumLength: Int.max) { content, contentContext, isComplete, error in
                     if let content {
                         continuation.yield(content)
                         receiveMessage()
@@ -180,7 +171,7 @@ extension ConnectedView {
     ConnectedView(
         endpoint: NWEndpoint.service(
             name: "ENDPOINT_NAME",
-            type: "_example._udp",
+            type: "_example._tcp",
             domain: "local.",
             interface: nil
         ),
