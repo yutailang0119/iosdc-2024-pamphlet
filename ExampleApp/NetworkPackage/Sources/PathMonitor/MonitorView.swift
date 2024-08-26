@@ -55,22 +55,9 @@ public struct MonitorView: View {
         }
         .navigationTitle("NWPathMonitor")
         .task {
-            for await path in monitor() {
+            for await path in NWPathMonitor() {
                 self.path = path
             }
-        }
-    }
-
-    private func monitor() -> AsyncStream<NWPath> {
-        AsyncStream { continuation in
-            let monitor = NWPathMonitor()
-            monitor.pathUpdateHandler = { path in
-                continuation.yield(path)
-            }
-            continuation.onTermination = { _ in
-                monitor.cancel()
-            }
-            monitor.start(queue: .global(qos: .background))
         }
     }
 }
